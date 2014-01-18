@@ -29,54 +29,94 @@ html
         h2 ES6
 
       section
-        h2 Powerful syntax
+        h2(class='code-aligned') Powerful syntax
         ul
           li(class='codeAndLabel')
             label Destructuring
-            pre(class='labelledCode')
+            pre
               code.language-javascript.
                 var [a, b] = [b, a];
                 var [x, y] = { x: 1, y: 2, other: 3 };
 
           li(class='codeAndLabel')
             label Function shorthand
-            pre(class='labelledCode')
+            pre
               code.language-javascript.
                 myFavFunction((x, y) => x * y);
 
           li(class='codeAndLabel')
             label Default Arguments
-            pre(class='labelledCode')
+            pre
               code.language-javascript.
                 function (x = "default value") { }
 
           li(class='codeAndLabel')
             label Varargs
-            pre(class='labelledCode')
+            pre
               code.language-javascript.
                 function (a, b, ...others) { }
 
       section
-        h2 Structure
+        h2(class='code-aligned') Structure
         ul
-          li Modules
-          li Classes
+          li(class='codeAndLabel')
+            label Modules
+            pre
+              code.language-javascript.
+                module "myCoffeeMachine" {
+                  import $ from "jquery"
+
+                  export function () { ... }
+                }
+
+          li(class='codeAndLabel')
+            label Classes
+            pre
+              code.language-javascript.
+                class MyClass extends SuperClass {
+                  constructor(a, b, c) { ... }
+                  excitingMethod(x) { ...  }
+                }
 
       section
-        h2 Iterables
+        h2(class='code-aligned') Iterables
         ul
-          li For-Of
-          li Array comprehensions
-          li Sets & Maps
-          li Generators
+          li(class='codeAndLabel')
+            label For-of
+            pre
+              code.language-javascript.
+                for (let x of [1, 2, 3]) { ... }
+
+          li(class='codeAndLabel')
+            label Generators
+            pre
+              code.language-javascript.
+                function* numbers(x = 0) {
+                  while (true) { yield x++; }
+                }
+
+          li(class='codeAndLabel')
+            label List & generator comprehensions
+            pre
+              code.language-javascript.
+                evenNumbers = (x for (x of numbers)
+                                 if x % 2 == 0)
+          li(class='codeAndLabel')
+            label Set & map implementations
+            pre
+              code.language-javascript.
+                var uniqueValues = new Set([1, 2, 2, 3])
 
       section
-        h2 All sorts of other cool things
+        h2 Loads of other cool things
         ul
-          li Const
-          li Let
-          li WeakMaps
+          li Efficient binary data types and literals
+          li Tail call optimisation
+          li Structs
+          li Constants
+          li Weak maps
           li Function proxies
+          li Multiline strings
           li String templating
 
       section
