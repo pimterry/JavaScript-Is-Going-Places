@@ -9,6 +9,7 @@ html
     //- Check out 'src/bower_components/prism/themes/' for available themes
     link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
     link(rel='stylesheet', type='text/css', href='styles/main.css')
+    link(rel='stylesheet', type='text/css', href='styles/custom.css')
     // endbuild
 
   body
@@ -29,21 +30,41 @@ html
 
       section
         h2 Powerful syntax
-        ol
-          li Destructuring
-          li Function shorthand
-          li Default arguments
-          li Varargs
+        ul
+          li(class='codeAndLabel')
+            label Destructuring
+            pre(class='labelledCode')
+              code.language-javascript.
+                var [a, b] = [b, a];
+                var [x, y] = { x: 1, y: 2, other: 3 };
+
+          li(class='codeAndLabel')
+            label Function shorthand
+            pre(class='labelledCode')
+              code.language-javascript.
+                myFavFunction((x, y) => x * y);
+
+          li(class='codeAndLabel')
+            label Default Arguments
+            pre(class='labelledCode')
+              code.language-javascript.
+                function (x = "default value") { }
+
+          li(class='codeAndLabel')
+            label Varargs
+            pre(class='labelledCode')
+              code.language-javascript.
+                function (a, b, ...others) { }
 
       section
         h2 Structure
-        ol
+        ul
           li Modules
           li Classes
 
       section
         h2 Iterables
-        ol
+        ul
           li For-Of
           li Array comprehensions
           li Sets & Maps
@@ -51,7 +72,7 @@ html
 
       section
         h2 All sorts of other cool things
-        ol
+        ul
           li Const
           li Let
           li WeakMaps
@@ -62,7 +83,7 @@ html
         h2 Compilation Target
 
       section
-        ol
+        ul
           li CoffeeScript
           li TypeScript
           li ClojureScript
@@ -118,6 +139,11 @@ html
           | JavaScript
           | JavaScript
           | JavaScript
+
+      section
+        code
+        code
+        code
 
       section
         h2 Thanks!
