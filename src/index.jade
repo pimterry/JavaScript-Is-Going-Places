@@ -6,7 +6,6 @@ html
     title JavaScript Is Going Places
 
     // build:css styles/styles.css
-    //- Check out 'src/bower_components/prism/themes/' for available themes
     link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
     link(rel='stylesheet', type='text/css', href='styles/main.css')
     link(rel='stylesheet', type='text/css', href='styles/custom.css')
@@ -26,7 +25,9 @@ html
           h2 Expanding Ecosystem
 
       section
-        h2 ES6
+        h2 ECMAScript 6
+        em (Coming soon)
+
 
       section
         h2(class='code-aligned') Powerful syntax
@@ -109,8 +110,9 @@ html
 
       section
         h2 Loads of other cool things
-        ul
-          li Efficient binary data types and literals
+        ul(class='big-list')
+          li Efficient binary data types
+          li Binary and octal literals
           li Tail call optimisation
           li Structs
           li Constants
@@ -124,9 +126,79 @@ html
 
       section
         ul
-          li CoffeeScript
-          li TypeScript
-          li ClojureScript
+          li(class='codeAndLabel')
+            label CoffeeScript
+            pre
+              code.language-javascript.
+                sayHello = (name) ->
+                  console.log("hello " + name)
+          li(class='codeAndLabel')
+            label TypeScript
+            pre
+              code.language-javascript.
+                function sayHello(name: string) {
+                  console.log("hello " + name);
+                }
+          li(class='codeAndLabel')
+            label ClojureScript
+            pre
+              code.language-clojurescript.
+                (defn sayHello [name]
+                  .log js/console
+                    (str "hello " name))
+          li(class='codeAndLabel')
+            label Dart
+            pre
+              code.language-javascript.
+                void sayHello(String name) {
+                    print('hello ' + name);
+                }
+
+      section
+        h2 Working cross-compilation for:
+        ul(class='big-list')
+          li(class='pairs')
+            strong .net
+            span JSIL
+          li(class='pairs')
+            strong Java
+            span j2js
+          li(class='pairs')
+            strong Ruby
+            span Opal
+          li(class='pairs')
+            strong Python
+            span Pyjamas
+          li(class='pairs')
+            strong Perl
+            span Perlito
+          li(class='pairs')
+            strong Scala
+            span Scala.js
+          li(class='pairs')
+            strong Haskell
+            span UHC
+          li(class='pairs')
+            strong PHP
+            span Phype
+
+      section
+        h2 JavaScript is pretty fast now
+        br
+        h4 Chrome's JS engine (V8) is approximately:
+        br
+        ul
+          li 12x faster than Python
+          li 10x faster than PHP
+          li 6x faster than Ruby
+          li The same as Clojure or Go
+          li 1/2 the speed of Java
+          li 1/4 the speed of C++
+
+        small
+          | Data is the median result on x64 single-core machine for
+          | the full set of language benchmarks from&nbsp;
+          a(href='http://benchmarksgame.alioth.debian.org/') benchmarksgame.alioth.debian.org
 
       section
         h2 ASM.js
