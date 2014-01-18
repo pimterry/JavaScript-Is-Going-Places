@@ -12,59 +12,94 @@ html
     // endbuild
 
   body
-
     article
-
       section
         h1 JavaScript Is Going Places
 
       section
-        h2 Keyboard Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
+        div(class='language')
+          h2 Modern language
+        div(id='target')
+          h2 Compilation Target
+        div(id='ecosystem')
+          h2 Expanding Ecosystem
 
       section
-        h2 Touch Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-touch">bespoke-touch</a>
+        h2 ES6
 
       section
-        h2 Responsive Slides
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-scale">bespoke-scale</a>
+        h2 Powerful syntax
+        ol
+          li Destructuring
+          li Function shorthand
+          li Default arguments
+          li Varargs
 
       section
-        h2 Syntax Highlighting
-        h3 Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
-        hr
-        pre
-          code.language-javascript.
-            bespoke.from('article', {
-              keys: true,
-              touch: true,
-              hash: true,
-              state: true,
-              bullets: 'li, .bullet'
-            });
-
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
-
-      section(data-bespoke-state='emphatic')
-        h2 Emphatic Slide!
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a>
+        h2 Structure
+        ol
+          li Modules
+          li Classes
 
       section
-        h2.bullet Just the beginning...
-        hr
-        ul
-          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-          li Edit JavaScript in <em>'src/scripts/main.js'</em>
-        hr
-        ul
-          li
-            strong Enjoy! :)
-            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+        h2 Iterables
+        ol
+          li For-Of
+          li Array comprehensions
+          li Sets & Maps
+          li Generators
+
+      section
+        h2 All sorts of other cool things
+        ol
+          li Const
+          li Let
+          li WeakMaps
+          li Function proxies
+          li String templating
+
+      section
+        h2 Compilation Target
+
+      section
+        ol
+          li CoffeeScript
+          li TypeScript
+          li ClojureScript
+
+      section
+        h2 ASM.js
+
+      section
+        h2 Ecosystem
+
+      section
+        h2 Node.JS
+
+      section
+        h2 Hardware APIs
+
+      section
+        h2 NodeCopter
+
+      section
+        h2 NodeCopter, Fly!
+
+      section
+        h2 NodeCopter, Spin!
+
+      section
+        h2 NodeCopter, See!
+
+      section
+        h2(id='manyJavaScripts')
+          - for (var ii = 0; ii < 20; ii++) {
+            | JavaScript &nbsp;
+          - }
+
+      section
+        h2 Thanks!
+
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
