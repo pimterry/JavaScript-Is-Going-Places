@@ -18,9 +18,9 @@ html
 
       section
         div(class='language')
-          h2 Modern language
+          h2 Modern Language
         div(id='target')
-          h2 Compilation Target
+          h2 Common Platform
         div(id='ecosystem')
           h2 Expanding Ecosystem
 
@@ -28,17 +28,9 @@ html
         h2 ECMAScript 6
         em (Coming soon)
 
-
       section
         h2(class='code-aligned') Powerful syntax
         ul
-          li(class='codeAndLabel')
-            label Destructuring
-            pre
-              code.language-javascript.
-                var [a, b] = [b, a];
-                var [x, y] = { x: 1, y: 2, other: 3 };
-
           li(class='codeAndLabel')
             label Function shorthand
             pre
@@ -56,6 +48,13 @@ html
             pre
               code.language-javascript.
                 function (a, b, ...others) { }
+
+          li(class='codeAndLabel')
+            label Destructuring
+            pre
+              code.language-javascript.
+                var [a, b] = [b, a];
+                var [x, y] = { x: 1, y: 2, other: 3 };
 
       section
         h2(class='code-aligned') Structure
@@ -86,7 +85,7 @@ html
             label For-of
             pre
               code.language-javascript.
-                for (let x of [1, 2, 3]) { ... }
+                for (var x of [1, 2, 3]) { ... }
 
           li(class='codeAndLabel')
             label Generators
@@ -103,7 +102,7 @@ html
                 evenNumbers = (x for (x of numbers)
                                  if x % 2 == 0)
           li(class='codeAndLabel')
-            label Set & map implementations
+            label Built-in set & map classes
             pre
               code.language-javascript.
                 var uniqueValues = new Set([1, 2, 2, 3])
@@ -122,7 +121,7 @@ html
           li String templating
 
       section
-        h2 Compilation Target
+        h1 JavaScript as a Platform
 
       section
         ul
@@ -151,7 +150,7 @@ html
             pre
               code.language-javascript.
                 void sayHello(String name) {
-                    print('hello ' + name);
+                    print("hello " + name);
                 }
 
       section
@@ -183,7 +182,7 @@ html
             span Phype
 
       section
-        h2 JavaScript is pretty fast now
+        h2 JavaScript is pretty quick now
         br
         h4 Chrome's JS engine (V8) is approximately:
         br
@@ -192,7 +191,7 @@ html
           li 10x faster than PHP
           li 6x faster than Ruby
           li The same as Clojure or Go
-          li 1/2 the speed of Java
+          li 1/2 the speed of Java or C#
           li 1/4 the speed of C++
 
         small
