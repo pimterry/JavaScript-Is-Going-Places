@@ -204,25 +204,88 @@ html
         h2 ASM.js
 
       section
-        h2 Ecosystem
+        pre
+          code.language-javascript.
+            "use asm.js"
+
+            var f64 = new global.Float64Array(heap);
+
+            function vclamp(ret, v, len) {
+              ret = ret|0;
+              v = v|0;
+              len = +len;
+
+              if (+vdot(v, v) > len*len) {
+                vnormalize(ret, v);
+                vmult(ret, ret, len);
+              } else {
+                cpv(ret, +f64[v>>3], +f64[v+8>>3]);
+              }
+            }
+
+      section
+        h2 This is <em>blazing fast</em>
+
+      section
+        h2
+          | This is a simple model of a computer
+
+      section
+        h1 The JavaScript Ecosystem
 
       section
         h2 Node.JS
 
       section
-        h2 Hardware APIs
+        h2 NPM
+
+      section
+        h2 Hardware
 
       section
         h2 NodeCopter
+        pre
+          code.language-javascript.
+            var arDroneLibrary = require('ar-drone');
+            var drone = arDroneLibrary.createClient();
 
       section
-        h2 NodeCopter, Fly!
+        h2 NodeCopter, fly!
+        pre
+          code.language-javascript.
+            drone.takeoff();
 
       section
-        h2 NodeCopter, Spin!
+        h2 NodeCopter, do things!
+        pre
+          code.language-javascript.
+            drone.up(0.1);
+
+            drone.clockwise(0.5);
+
+            drone.after(1000, function () {
+                drone.counterClockwise(0.5);
+            }).after(1000, function () {
+                drone.animate('flipAhead', 15);
+            }).after(1000, function () {
+                drone.stop();
+            });
 
       section
-        h2 NodeCopter, See!
+        h2(class='code-aligned') NodeCopter, see!
+        ul
+          li(class='codeAndLabel')
+            label Server-side
+            pre
+              code.language-javascript.
+                var droneStream = require("dronestream");
+                droneStream.listen(8080);
+
+          li(class='codeAndLabel')
+            label Client-side
+            pre
+              code.language-javascript.
+                new NodecopterStream($("#droneStreamDiv"));
 
       section
         h2(id='manyJavaScripts')
