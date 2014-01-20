@@ -277,14 +277,20 @@ html
             label Server-side
             pre
               code.language-javascript.
-                var droneStream = require("dronestream");
-                droneStream.listen(8080);
+                require("dronestream").listen(8080);
 
           li(class='codeAndLabel')
             label Client-side
             pre
               code.language-javascript.
-                new NodecopterStream($("#droneStreamDiv"));
+                new NodecopterStream($("#droneStream")[0],
+                                     {'port': 8080});
+        div(id='droneStream',width='640',height='300')
+
+        script(src='/bower_components/jquery/jquery.js')
+        script(src='/scripts/dronestream/nodecopter-client.js')
+        script
+          | new NodecopterStream($("#droneStream")[0], {'port': 8080});
 
       section
         h2(id='manyJavaScripts')
