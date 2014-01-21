@@ -248,13 +248,13 @@ html
             var arDroneLibrary = require('ar-drone');
             var drone = arDroneLibrary.createClient();
 
-      section
+      section(data-control-url='/takeoff')
         h2 NodeCopter, fly!
         pre
           code.language-javascript.
             drone.takeoff();
 
-      section
+      section(data-control-url='/showoff')
         h2 NodeCopter, do things!
         pre
           code.language-javascript.
@@ -292,7 +292,7 @@ html
         script
           | new NodecopterStream($("#droneStream")[0], {'port': 8080});
 
-      section
+      section(data-control-url='/land')
         h2(id='manyJavaScripts')
           | JavaScript
           | JavaScript
@@ -327,7 +327,6 @@ html
 
       section
         h2 Thanks!
-
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
