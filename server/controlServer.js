@@ -1,27 +1,27 @@
 var restify = require('restify');
-var arDroneLibrary = require('ar-drone');
+var drone = require('ar-drone').createClient();
 var server = restify.createServer();
 server.use(restify.CORS());
 
 server.get("/takeoff", function (req, res) {
-  arDroneLibrary.createClient().takeoff();  
+  drone.takeoff();  
   res.send("OK");
 });
 
-server.get("/showoff", function (req, res) {
-  var drone = arDroneLibrary.createClient();
-  drone.up(0.5);
+server.get("/showoff", function (req, res) {  
+  drone.up(0.4);
 
-  drone.after(2000, function () {
-      drone.animate('flipAhead', 15);
+  drone.after(1000, function () {
+      drone.stop();
+      drone.right(0.3);
   }).after(1000, function () {
       drone.stop();
+      drone.left(0.3)
+  }).after(1200, function () {
+      drone.stop();
+  }).after(10000, function () {
+      drone.land();
   });
-  res.send("OK");
-});
-
-server.get("/land", function (req, res) {
-  arDroneLibrary.createClient().land();
   res.send("OK");
 });
 
