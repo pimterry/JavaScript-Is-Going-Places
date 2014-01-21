@@ -290,7 +290,8 @@ html
         script(src='/bower_components/jquery/jquery.js')
         script(src='/scripts/dronestream/nodecopter-client.js')
         script
-          | new NodecopterStream($("#droneStream")[0], {'port': 8080});
+          | new NodecopterStream($("#droneStream")[0],
+          |                      {'port': 8080});
 
       section
         h2(id='manyJavaScripts')
@@ -320,10 +321,54 @@ html
           | JavaScript
           | JavaScript
 
-      section
-        code
-        code
-        code
+      section(class='sideBySideCode')
+        pre
+          code.language-javascript.
+            // Client-side
+            var server = "http://localhost:8001";
+
+            deck.on('activate', function (event) {
+              var slideData = $(event.slide).data();  
+              if (slideData["controlUrl"]) {
+                $.get(server + slideData["controlUrl"]);
+              }
+            });
+            
+            new NodecopterStream($("#droneStream")[0],
+                                {'port': 8080});
+          
+        pre
+          code.language-javascript.
+            // Server-side
+            var restify = require('restify');
+            var drone = require('ar-drone').createClient();
+            var server = restify.createServer();
+            server.use(restify.CORS());
+
+            server.get("/takeoff", function (req, res) {
+              drone.takeoff();  
+              res.send("OK");
+            });
+
+            server.get("/showoff", function (req, res) {  
+              drone.up(0.4);
+
+              drone.after(1000, function () {
+                  drone.stop();
+                  drone.right(0.3);
+              }).after(1000, function () {
+                  drone.stop();
+                  drone.left(0.3)
+              }).after(1200, function () {
+                  drone.stop();
+              }).after(10000, function () {
+                  drone.land();
+              });
+              res.send("OK");
+            });
+
+            server.listen(8001);
+            require("dronestream").listen(8080);
 
       section
         h2 Thanks!
