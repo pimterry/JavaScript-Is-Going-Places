@@ -231,17 +231,19 @@ html
         h2 NodeCopter, do things!
         pre
           code.language-javascript.
-            drone.up(0.1);
+              drone.up(0.4);
 
-            drone.clockwise(0.5);
-
-            drone.after(1000, function () {
-                drone.counterClockwise(0.5);
-            }).after(1000, function () {
-                drone.animate('flipAhead', 15);
-            }).after(1000, function () {
-                drone.stop();
-            });
+              drone.after(1000, function () {
+                  drone.stop();
+                  drone.right(0.3);
+              }).after(1000, function () {
+                  drone.stop();
+                  drone.left(0.3)
+              }).after(1200, function () {
+                  drone.stop();
+              }).after(10000, function () {
+                  drone.land();
+              });
 
       section
         h2(class='code-aligned') NodeCopter, see!
