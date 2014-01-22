@@ -27,57 +27,7 @@ html
       section
         h2 ECMAScript 6
         em (Coming soon)
-
-      section
-        h2(class='code-aligned') Powerful syntax
-        ul
-          li(class='codeAndLabel')
-            label Function shorthand
-            pre
-              code.language-javascript.
-                myFavFunction((x, y) => x * y);
-
-          li(class='codeAndLabel')
-            label Default arguments
-            pre
-              code.language-javascript.
-                function (x = "default value") { }
-
-          li(class='codeAndLabel')
-            label Varargs
-            pre
-              code.language-javascript.
-                function (a, b, ...others) { }
-
-          li(class='codeAndLabel')
-            label Destructuring
-            pre
-              code.language-javascript.
-                var [a, b] = [b, a];
-                var [x, y] = { x: 1, y: 2, other: 3 };
-
-      section
-        h2(class='code-aligned') Structure
-        ul
-          li(class='codeAndLabel')
-            label Modules
-            pre
-              code.language-javascript.
-                module "myCoffeeMachine" {
-                  import $ from "jquery"
-
-                  export function () { ... }
-                }
-
-          li(class='codeAndLabel')
-            label Classes
-            pre
-              code.language-javascript.
-                class MyClass extends SuperClass {
-                  constructor(a, b, c) { ... }
-                  excitingMethod(x) { ...  }
-                }
-
+        
       section
         h2(class='code-aligned') Iterables
         ul
@@ -105,7 +55,57 @@ html
             label Built-in set & map classes
             pre
               code.language-javascript.
-                var uniqueValues = new Set([1, 2, 2, 3])
+                var uniqueValues = new Set([1, 2, 2, 3])    
+                
+      section
+        h2(class='code-aligned') Structure
+        ul
+          li(class='codeAndLabel')
+            label Modules
+            pre
+              code.language-javascript.
+                module "myCoffeeMachine" {
+                  import $ from "jquery"
+
+                  export function () { ... }
+                }
+
+          li(class='codeAndLabel')
+            label Classes
+            pre
+              code.language-javascript.
+                class MyClass extends SuperClass {
+                  constructor(a, b, c) { ... }
+                  excitingMethod(x) { ...  }
+                }
+
+      section
+        h2(class='code-aligned') Powerful new syntax
+        ul
+          li(class='codeAndLabel')
+            label Function shorthand
+            pre
+              code.language-javascript.
+                myFavFunction((x, y) => x * y);
+
+          li(class='codeAndLabel')
+            label Default arguments
+            pre
+              code.language-javascript.
+                function (x = "default value") { }
+
+          li(class='codeAndLabel')
+            label Varargs
+            pre
+              code.language-javascript.
+                function (a, b, ...others) { }
+
+          li(class='codeAndLabel')
+            label Destructuring
+            pre
+              code.language-javascript.
+                var [a, b] = [b, a];
+                var [x, y] = { x: 1, y: 2, other: 3 };
 
       section
         h2 Loads of other cool things
